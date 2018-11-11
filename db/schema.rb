@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
 
   create_table "countries", force: :cascade do |t|
     t.string "title"
+    t.string "content"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,7 +44,10 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
 
   create_table "documents", force: :cascade do |t|
     t.string "title"
+    t.string "content"
     t.text "body"
+    t.string "kind"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
   create_table "question_options", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.integer "choose_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,6 +63,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
   create_table "text_answers", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.text "textable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_154828) do
 
   create_table "visa_applications", force: :cascade do |t|
     t.string "title"
+    t.string "content"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

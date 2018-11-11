@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  has_many :documents
-  has_many :files
-  has_many :visas
-  has_many :text_answers
-  has_many :choose_answers
+  attr_accessor :login
+  has_many :documents, foreign_key: :documents_id
+  has_many :files, foreign_key: :files_id
+  has_many :visas, foreign_key: :visas_id
+  has_many :text_answers, foreign_key: :text_answers_id
+  has_many :choose_answers, foreign_key: :choose_answers_id
 end
