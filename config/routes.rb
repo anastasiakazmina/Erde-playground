@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :my_documents
+  resources :my_visas
+  resources :choose_countries
   resources :visa_applications
   resources :question_options
   resources :choose_questions

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Choose Countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @choose_countries.each do |choose_country| %>
+      <tr>
+        <td><%= choose_country.title %></td>
+        <td><%= choose_country.body %></td>
+        <td><%= link_to 'Show', choose_country %></td>
+        <td><%= link_to 'Edit', edit_choose_country_path(choose_country) %></td>
+        <td><%= link_to 'Destroy', choose_country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Choose Country', new_choose_country_path %>
